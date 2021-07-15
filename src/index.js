@@ -5,7 +5,7 @@ import App from './App';
 import About from './about';
 import Contact from './contact';
 import reportWebVitals from './reportWebVitals';
-import { Route,Link,BrowserRouter as Router } from 'react-router-dom';
+import { Route,Link,BrowserRouter as Router, NavLink } from 'react-router-dom';
 
 const routing=(
   <Router>
@@ -13,9 +13,12 @@ const routing=(
       
         <h1>React Router Example</h1>
         <ul>
-          <li ><Link to='/'>Home </Link></li>
+          {/* <li ><Link to='/'>Home </Link></li>
           <li><Link to='/about'>About</Link></li>
-          <li><Link to='contact'>Contact</Link></li>
+          <li><Link to='contact'>Contact</Link></li> */}
+         <li> <NavLink to='/' exact activeStyle={{color:'red'}}>Home</NavLink></li>
+         <li> <NavLink to='/about' exact activeStyle={{color:'green'}}>About</NavLink></li>
+        <li><NavLink to='/contact' exact activeStyle={{color:'orange'}}>Contact</NavLink></li>
         </ul>
         <Route exact path='/' component={App}/>
         <Route path='/about' component={About}/>

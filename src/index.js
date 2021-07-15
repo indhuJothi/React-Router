@@ -12,7 +12,7 @@ const routing=(
     <div>
       
         <h1>React Router Example</h1>
-        <Route path='/' component={App}/>
+        <Route exact path='/' component={App}/>
         <Route path='/about' component={About}/>
         <Route path='/contact' component={Contact}/>
      

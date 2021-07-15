@@ -5,7 +5,7 @@ import App from './App';
 import About from './about';
 import Contact from './contact';
 import reportWebVitals from './reportWebVitals';
-import { Route, Router } from 'react-router-dom';
+import { Route,Link,BrowserRouter as Router } from 'react-router-dom';
 
 const routing=(
   <Router>

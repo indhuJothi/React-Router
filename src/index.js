@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {BrowserRouter as Router, Route,Switch,NavLink} from 'react-router-dom';
 import App from './App';
 import About from './about';
 import Contact from './contact';
+import Notfound from './notfound';
 import reportWebVitals from './reportWebVitals';
-import { Route,Link,BrowserRouter as Router, NavLink } from 'react-router-dom';
+
 
 const routing=(
   <Router>
-    <div>
+       <div>
       
         <h1>React Router Example</h1>
         <ul>
@@ -18,13 +20,15 @@ const routing=(
           <li><Link to='contact'>Contact</Link></li> */}
          <li> <NavLink to='/' exact activeStyle={{color:'red'}}>Home</NavLink></li>
          <li> <NavLink to='/about' exact activeStyle={{color:'green'}}>About</NavLink></li>
-        <li><NavLink to='/contact' exact activeStyle={{color:'orange'}}>Contact</NavLink></li>
+         <li> <NavLink to='/contact' exact activeStyle={{color:'orange'}}>Contact</NavLink></li>
         </ul>
+        <Switch>
         <Route exact path='/' component={App}/>
         <Route path='/about' component={About}/>
         <Route path='/contact' component={Contact}/>
-     
-    </div>
+        <Route component={Notfound}/>
+        </Switch>
+       </div>
   </Router>
 )
 ReactDOM.render(
